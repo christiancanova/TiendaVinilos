@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import image from "./thriller.jpg";
 
-export default function ItemCount({stock, initial, onAdd}) {
+export default function ItemCount({stock, initial}) {
     const [counter, setCounter] = useState((initial));
     const [counterStock, setCounterStock] = useState(stock);
    
