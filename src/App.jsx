@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavScrollExample from './components/Navbar/NavBar'
-import ItemListContainer from './components/containers/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 
 
-function App() {
+const App = () => {
+
+
   return (
     <header className="App">
       <NavScrollExample />
