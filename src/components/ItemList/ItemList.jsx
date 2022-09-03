@@ -6,15 +6,11 @@ import Item from '../Item/Item';
 
 function ItemList({ listado }) {
 
-
-    const productos = (listado)
-    console.log(productos)
-
     return (
-        productos.map((producto) => {
+        listado.map((producto) => {
             return (
                 
-                <Item producto={producto} />
+                <Item key={producto.id} producto={producto} />
             )
         }
         )

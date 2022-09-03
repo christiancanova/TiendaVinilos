@@ -13,7 +13,7 @@ export default function Item({producto}) {
               <Card.Body>
                 <Card.Title>{producto.title}</Card.Title>
                 <Card.Text>
-                Precio: {producto.price}
+                Precio: ${producto.price}
                 </Card.Text>
                 <ItemCount stock={10} initial={1}/>
               </Card.Body>

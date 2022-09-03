@@ -1,22 +1,22 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from "react";
-import ItemList from '../ItemList/ItemList';
+import ItemDetail from '../ItemDetail/ItemDetail';
 import GrowExample from '../spinner/spinner';
 
 
 
-function ItemListContainer() {
+function ItemDetailContainer() {
 
 
   //const [carrito, setCarrito ] = useState([]) 
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true);
 
-  const buscarProductos = async () => {
+  const getItem = async () => {
 
     const response = await fetch("https://api.mercadolibre.com/sites/MLA/search?q=vinilos+musica")
     const data = await response.json()
-    setProductos(data.results);
+    setProductos(data.results[17]);
   }
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function ItemListContainer() {
       }, 2000);
     });
     promiseObject.then(values => {
-      buscarProductos()
+      getItem()
       setLoading(false);
       clearTimeout(promiseObject);
     });
@@ -39,12 +39,12 @@ function ItemListContainer() {
     return <div className="spinner">  <GrowExample  /> </div> ;
   }
 
-  return <ItemList listado={productos} />;
+  return <ItemDetail key={productos.id} item={productos} />;
 };
 
 
 
 
 
-export default ItemListContainer;
+export default ItemDetailContainer;
 

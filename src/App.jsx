@@ -2,20 +2,20 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavScrollExample from './components/Navbar/NavBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContanier/ItemDetailContanier';
+//import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 
 
 const App = () => {
 
-
+//<ItemListContainer  />
   return (
     <header className="App">
       <NavScrollExample />
       <div className="App-header">
-      <ItemListContainer  />
-      
+      <ItemDetailContainer />
       </div>
     </header>
   );
