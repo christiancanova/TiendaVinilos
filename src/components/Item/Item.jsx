@@ -1,11 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/Card';
-import ItemCount from '../ItemCount/ItemCount';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+
 
 
 
 export default function Item({producto}) {
+
           
     return (
             <Card id="card" style={{ width: '21rem', }}>
@@ -13,14 +16,13 @@ export default function Item({producto}) {
               <Card.Body>
                 <Card.Title>{producto.title}</Card.Title>
                 <Card.Text>
-                Precio: ${producto.price}
+                <Link to={`/detalle/${producto.id}`}><Button variant="secondary">Ver detalle de producto</Button></Link>
                 </Card.Text>
-                <ItemCount stock={10} initial={1}/>
               </Card.Body>
             </Card>
           );
 }
         
-       
+  
 
 

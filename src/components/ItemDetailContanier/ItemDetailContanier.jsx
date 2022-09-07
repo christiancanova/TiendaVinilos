@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail';
 import GrowExample from '../spinner/spinner';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -11,12 +12,14 @@ function ItemDetailContainer() {
   //const [carrito, setCarrito ] = useState([]) 
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true);
+  const {idproducto} = useParams()
+  
 
   const getItem = async () => {
 
-    const response = await fetch("https://api.mercadolibre.com/sites/MLA/search?q=vinilos+musica")
+    const response = await fetch(`https://api.mercadolibre.com/items/${idproducto}`)
     const data = await response.json()
-    setProductos(data.results[17]);
+    setProductos(data);
   }
 
   useEffect(() => {
@@ -24,7 +27,7 @@ function ItemDetailContainer() {
     const promiseObject = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();
-      }, 2000);
+      }, 1000);
     });
     promiseObject.then(values => {
       getItem()
@@ -33,13 +36,15 @@ function ItemDetailContainer() {
     });
 
 
-  }, [])
+  }, )
 
-  if (loading) {
-    return <div className="spinner">  <GrowExample  /> </div> ;
-  }
+  return (
 
-  return <ItemDetail key={productos.id} item={productos} />;
+    <div className="App-header"> {loading ? <div className="spinner">  <GrowExample /> </div> : <ItemDetail key={productos.id} item={productos} />} </div>
+
+  )
+
+
 };
 
 

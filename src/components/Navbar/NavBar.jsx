@@ -4,25 +4,33 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import CartWidjet from './CartWidjet';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 
 
 function NavScrollExample() {
+
+  const idcategoria = {
+        rock: "rock",
+        pop: "pop",
+        tango: "tango",
+  }
+
   return (
+    <div>
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Hamilton Records</Navbar.Brand>
+      <Navbar.Brand as={Link} to={"/"}>Hamilton Records</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="my-2 me-auto my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Inicia sesión</Nav.Link>
-            <Nav.Link href="#action2">Registrate</Nav.Link>
-            <Nav.Link href="#action3"><CartWidjet /></Nav.Link>
+          <Nav className="my-2 me-auto my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+          <Nav.Link as={Link} to={`/categoria/${idcategoria.rock}`}>Rock</Nav.Link>
+          <Nav.Link as={Link} to={`/categoria/${idcategoria.pop}`}>Pop</Nav.Link>
+          <Nav.Link as={Link} to={`/categoria/${idcategoria.tango}`}>Tango</Nav.Link>
+          <Nav.Link ><CartWidjet /></Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -35,6 +43,7 @@ function NavScrollExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
   );
 }
 
