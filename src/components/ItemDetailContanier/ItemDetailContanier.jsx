@@ -15,14 +15,16 @@ function ItemDetailContainer() {
   const {idproducto} = useParams()
   
 
-  const getItem = async () => {
-
-    const response = await fetch(`https://api.mercadolibre.com/items/${idproducto}`)
-    const data = await response.json()
-    setProductos(data);
-  }
+  
 
   useEffect(() => {
+
+    const getItem = async () => {
+
+      const response = await fetch(`https://api.mercadolibre.com/items/${idproducto}`)
+      const data = await response.json()
+      setProductos(data);
+    }
 
     const promiseObject = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -36,7 +38,7 @@ function ItemDetailContainer() {
     });
 
 
-  }, )
+  },[idproducto] )
 
   return (
 

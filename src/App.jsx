@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavScrollExample from './components/Navbar/NavBar'
 import ItemDetailContainer from './components/ItemDetailContanier/ItemDetailContanier';
+import Cart from './components/Cart/Cart';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -21,6 +22,8 @@ const App = () => {
           <Route exact path="/producto/:idproducto" element={<ItemListContainer />} />
           <Route exact path="/categoria/:idcategoria" element={<ItemListContainer />} />
           <Route exact path="/detalle/:idproducto" element={<ItemDetailContainer />} />
+          <Route exact path="/cart" element={<Cart />} />
+
         </Routes>
       </BrowserRouter>
 

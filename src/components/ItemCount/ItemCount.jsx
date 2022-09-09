@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-export default function ItemCount({stock, initial}) {
+export default function ItemCount({quantityToAdd, setquantityToAdd, stock, initial}) {
     const [counter, setCounter] = useState((initial));
     const [counterStock, setCounterStock] = useState(stock);
    
@@ -32,7 +32,7 @@ export default function ItemCount({stock, initial}) {
       {
       setCounterStock(count => count - (counter));
       
-        console.log("Agregaste "+counter+" Vinilos")
+      setquantityToAdd(quantityToAdd+counter)
         
       };
       
@@ -47,7 +47,7 @@ export default function ItemCount({stock, initial}) {
                 <span className="counter__output">{counter}</span>
                 <Button variant="secondary" onClick={increase}>+</Button></div>
                 <div><p></p></div>
-                <div><Button variant="outline-secondary" onClick={OnAdd}>Agregar al carrito</Button></div>
+                <div><Button variant="btn btn-outline-success" onClick={OnAdd}>Agregar al Carrito</Button></div>
             </div>
           );
 }
