@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount/ItemCount';
@@ -6,6 +6,7 @@ import { useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import GrowExample from '../spinner/spinner';
+import { CartContext } from '../../context/CartContext';
 
 
 
@@ -14,10 +15,12 @@ function ItemDetail({ item }) {
   const [quantityToAdd, setquantityToAdd] = useState(0);
   const [terminarCompra, setTerminarCompra] = useState(false);
   const [loading, setLoading] = useState(true);
+  const {addItem} = useContext(CartContext) 
+   
 
   const OnAdd = (qty) => {
     setTerminarCompra(true);
-    console.log(qty);
+    addItem(item, qty);
   };
 
   useEffect(() => {

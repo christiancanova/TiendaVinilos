@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContanier/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
 
 
 
@@ -15,17 +16,18 @@ const App = () => {
   return (
 
     <>
-      <BrowserRouter>
-      <NavScrollExample className="App" />
-        <Routes>
-          <Route exact path="/" element={<ItemListContainer />} />
-          <Route exact path="/producto/:idproducto" element={<ItemListContainer />} />
-          <Route exact path="/categoria/:idcategoria" element={<ItemListContainer />} />
-          <Route exact path="/detalle/:idproducto" element={<ItemDetailContainer />} />
-          <Route exact path="/cart" element={<Cart />} />
-
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <NavScrollExample className="App" />
+          <Routes>
+            <Route exact path="/" element={<ItemListContainer />} />
+            <Route exact path="/producto/:idproducto" element={<ItemListContainer />} />
+            <Route exact path="/categoria/:idcategoria" element={<ItemListContainer />} />
+            <Route exact path="/detalle/:idproducto" element={<ItemDetailContainer />} />
+            <Route exact path="/cart" element={<Cart />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
 
     </>
   )

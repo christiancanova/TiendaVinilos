@@ -30,7 +30,7 @@ function NavScrollExample() {
           <Nav.Link as={Link} to={`/categoria/${idcategoria.rock}`}>Rock</Nav.Link>
           <Nav.Link as={Link} to={`/categoria/${idcategoria.pop}`}>Pop</Nav.Link>
           <Nav.Link as={Link} to={`/categoria/${idcategoria.tango}`}>Tango</Nav.Link>
-          <Nav.Link ><CartWidjet /></Nav.Link>
+          <Nav.Link as={Link} to={`/cart`} ><CartWidjet /></Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
