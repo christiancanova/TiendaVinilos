@@ -35,9 +35,10 @@ function ItemDetail({ item }) {
 
 }, )
 
+let cantidad = quantityToAdd === 1
+
 
   return (
-
 
     <Card border="secondary" id="card2" style={{ width: '45rem', }}>
       <Card.Img id="card-img" variant="top" src={item.thumbnail} />
@@ -48,7 +49,8 @@ function ItemDetail({ item }) {
         </Card.Text>
 
         {terminarCompra ?
-          (loading ? <div className="spinner">  <GrowExample /> </div> : (<div><Card.Text>Agregaste {quantityToAdd} productos al carrito</Card.Text> <Button as={Link} to={`/cart`} variant="btn btn-danger" >Terminar Compra</Button></div>)) :
+          (loading ? <div className="spinner">  <GrowExample /> </div> : 
+          cantidad ? <div><Card.Text>Agregaste {quantityToAdd} producto al carrito</Card.Text> <Button as={Link} to={`/cart`} variant="btn btn-danger" >Terminar Compra</Button></div> : <div><Card.Text>Agregaste {quantityToAdd} productos al carrito</Card.Text> <Button as={Link} to={`/cart`} variant="btn btn-danger" >Terminar Compra</Button></div>)  :
           (<ItemCount OnAdd={OnAdd} quantityToAdd={quantityToAdd} setquantityToAdd={setquantityToAdd} stock={10} initial={1} />)
         }
 
