@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail';
 import GrowExample from '../spinner/spinner';
 import { useParams } from 'react-router-dom';
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
 
 
 
@@ -12,33 +13,32 @@ function ItemDetailContainer() {
   //const [carrito, setCarrito ] = useState([]) 
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true);
-  const {idproducto} = useParams()
-  
+  const { idproducto } = useParams()
 
-  
 
   useEffect(() => {
-
-    const getItem = async () => {
-
-      const response = await fetch(`https://api.mercadolibre.com/items/${idproducto}`)
-      const data = await response.json()
-      setProductos(data);
-    }
 
     const promiseObject = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();
-      }, 1000);
+        const db = getFirestore();
+        const itemRef = doc(db, "Items", idproducto);
+        getDoc(itemRef).then((snapshot) => {
+          const newProduct = {
+            id: snapshot.id,
+            ...snapshot.data(),
+          };
+          setProductos(newProduct);
+        });
+      }, 800);
     });
     promiseObject.then(values => {
-      getItem()
       setLoading(false);
       clearTimeout(promiseObject);
     });
 
 
-  },[idproducto] )
+  }, [idproducto])
 
   return (
 

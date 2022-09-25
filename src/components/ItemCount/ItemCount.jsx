@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-export default function ItemCount({OnAdd, quantityToAdd, setquantityToAdd, stock, initial }) {
+export default function ItemCount({ OnAdd, quantityToAdd, setquantityToAdd, stock, initial }) {
   const [counter, setCounter] = useState((initial));
   const [counterStock, setCounterStock] = useState(stock);
 
