@@ -15,10 +15,11 @@ function ItemDetail({ item }) {
   const [quantityToAdd, setquantityToAdd] = useState(0);
   const [terminarCompra, setTerminarCompra] = useState(false);
   const [loading, setLoading] = useState(true);
-  const {addItem} = useContext(CartContext) 
+  const {addItem, setId} = useContext(CartContext) 
    
 
   const OnAdd = (qty) => {
+    setId()
     setTerminarCompra(true);
     addItem(item, qty);
   };

@@ -7,16 +7,20 @@ import Card from 'react-bootstrap/Card';
 
 const Cart = () => {
 
-  const { items, removeItem, clear, totalPrice } = useContext(CartContext);
+  const { items, removeItem, clear, total, } = useContext(CartContext);
 
   let controlCantidad = items.length === 0
+
+  
  
   return (<div className="App-cart">
+    
     
     {controlCantidad ?
       <div id="cart"> No hay productos en tu carrito de compras. </div>
       :
       <div id="cart">
+        
         {items.map(items =>
           <div key={items.id} >
 
@@ -35,7 +39,7 @@ const Cart = () => {
         <Card id="cart" border="light">
         <Card.Text><Button onClick={() => clear()} variant="secondary" size="sm">Limpiar mi carrito</Button></Card.Text>
         
-        <Card.Text><Button variant="danger">Pagar: $ {totalPrice()}</Button></Card.Text>
+        <Card.Text><Button as={Link} to={`/form`} variant="danger">Pagar: $ {total}</Button></Card.Text>
         </Card>
       </div>}
     <Button as={Link} to={"/"} variant="outline-success">Seguir comprando</Button>
