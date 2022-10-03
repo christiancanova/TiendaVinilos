@@ -1,26 +1,26 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 
-export default function Item({producto}) {
+export default function Item({ producto }) {
 
-          
-    return (
-            <Card id="card" style={{ width: '21rem', }}>
-              <Card.Img variant="top" src={producto.image} />
-              <Card.Body>
-                <Card.Title>{producto.title}</Card.Title>
-                <Card.Text>
-                <Link to={`/detalle/${producto.id}`}><Button variant="secondary">Ver detalle de producto</Button></Link>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          );
+
+  return (
+    <Card as={Link} to={`/detalle/${producto.id}`} id="card" style={{ width: '19rem', }} className="hover:scale-105 drop-shadow-md hover:drop-shadow-2xl">
+      <Card.Img variant="top" src={producto.image} />
+      <Card.Body>
+        <Card.Text className="font-mono text-2xl font-semibold text-zinc-500">
+          {producto.description}</Card.Text>
+        <Card.Text className="font-mono text-3xl font-semibold text-slate-700">{producto.title}</Card.Text>
+        <Card.Text className="font-mono text-lg text-zinc-500">${producto.price}
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
 }
-        
-  
+
+
 
 

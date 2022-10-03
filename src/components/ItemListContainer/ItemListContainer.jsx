@@ -37,7 +37,6 @@ function ItemListContainer() {
             }));
             setProductos(docs);
           })
-
         }
         resolve();
       }, 800);
@@ -46,22 +45,13 @@ function ItemListContainer() {
       setLoading(false);
       clearTimeout(promiseObject);
     });
-
-
   }, [idcategoria])
 
 
   return (
-
     <div className="App-header"> {loading ? <div className="spinner">  <GrowExample /> </div> : <ItemList listado={productos} />} </div>
-
   )
-
 };
-
-
-
-
 
 export default ItemListContainer;
 

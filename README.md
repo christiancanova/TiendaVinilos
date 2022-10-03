@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Tienda de Vinilos
+### Proyecto de e-commerce en base a la utilización de tecnología REACT.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![N|Solid](https://www.nicepng.com/png/detail/374-3747469_vinilo-png-disco-vinilo.png)](https://www.nicepng.com/png/detail/374-3747469_vinilo-png-disco-vinilo.png)
 
-## Available Scripts
+Tienda de Vinilos es compatible con almacenamiento fuera de línea, listo para dispositivos móviles y habilitado para la nube.
 
-In the project directory, you can run:
+🌟¡Es el Proyecto Final del Curso de React para CoderHouse! 🌟
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalación
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+En el directorio del proyecto, puede ejecutar:
 
-### `npm test`
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ejecuta la aplicación en el modo de desarrollo.
+Abra http://localhost:3000 para verlo en su navegador.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologías utilizadas 🔧
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Javascript - React - CSS3 - HTML5 - Firebase - NodeJS - Git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Utilización del sitio.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Haciendo click en los enlaces de encabezado del sitio podrá visualizar la totalidad del catálogo (TIENDA DE VINILOS) o bien en forma particular a cada una de las categorías. (Rock, Pop y Tango).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+|TIENDA DE VINILOS |Rock  | Pop | Tango
+--- | --- | ---| ---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Otras instruciones 💡
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+✔️ Todos los precios publicados se encuentran en la moneda de curso legal de la República Argentina (Pesos Argentinos)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Desarrollado gracias a:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [CoderHouse](https://www.coderhouse.com/?utm_term=coderhouse&utm_campaign=0&utm_source=google_search_brand&utm_medium=cpc&gclid=EAIaIQobChMI0crEjOrE-gIV1xTUAR3DgwvcEAAYASAAEgJ2G_D_BwE)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* **Christian Canova** - *Proyectos en Desarrollo* - [GitHub](https://github.com/christiancanova)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Agradecimientos
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* A todo el equipo de CoderHouse por la calidad en la enseñanza, en especial, al profesor y a mi tutor.
+* A mis compañeros del curso.
+* A toda mi familia, por el apoyo recibido.

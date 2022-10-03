@@ -17,7 +17,6 @@ function ItemDetailContainer() {
 
 
   useEffect(() => {
-
     const promiseObject = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();

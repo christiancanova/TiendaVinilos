@@ -6,68 +6,57 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 const ContactForm = () => {
-   
     const { submitHandler, changeHandler, id2, form } = useContext(CartContext);
-
     return (
         <div>
             {typeof id2 !== 'undefined' ? (
-
-                
                 <div>
                     <Alert variant="success">
-                        <Alert.Heading>Felicitaciones {form.name}! Haz realizado la compra con exito</Alert.Heading>
+                        <Alert.Heading>Felicitaciones {form.name}! Haz realizado la compra con éxito</Alert.Heading>
                         <p>
                             Tu orden de pedido es {id2}
                         </p>
                         <hr />
                         <p className="mb-0">
-                            A la brevedad recibiramas un mensaje para coordinar la entrega del producto
+                            A la brevedad recibirás un mensaje para coordinar la entrega del producto.
                         </p>
-                        
-
                     </Alert>
                 </div>
             ) : (
                 <Form id="form" onSubmit={submitHandler}>
-
-                    <Form.Label>Completa tus datos para finalizar la compra</Form.Label>
-
-                    <label htmlFor="name">Nombre</label>
+                    <Form.Label><h4>Completa tus datos para finalizar la compra:</h4></Form.Label>
+                    <label htmlFor="name">Nombre y Apellido:</label>
                     <Form.Control
                         name="name"
                         id="name"
                         onChange={changeHandler}
                         value={form.name}
+                        required
                     />
-
-                    <label htmlFor="telefono">Teléfono</label>
+                    <label htmlFor="telefono">Teléfono:</label>
                     <Form.Control
                         name="telefono"
                         id="telefono"
                         onChange={changeHandler}
                         value={form.telefono}
+                        required
                     />
-
-
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Correo Electrónico:</label>
                     <Form.Control
                         type="email"
                         name="email"
                         id="email"
                         onChange={changeHandler}
                         value={form.email}
+                        required
                     />
-
-
-                    <label htmlFor="message">Mensaje</label>
+                    <label htmlFor="message">Comentarios:</label>
                     <Form.Control as="textarea" rows={3}
                         name="message"
                         id="message"
                         onChange={changeHandler}
                         value={form.message}
                     />
-
                     <Button variant="outline-dark" type="submit">Finalizar</Button>
                 </Form>
             )}

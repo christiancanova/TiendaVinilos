@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
                 return producto
             }))
             :
-            setItems([...items, { id: item.id, name: item.title, price: item.price, qty: qty }])
+            setItems([...items, { id: item.id, name: item.title,image: item.image, description: item.description, price: item.price, qty: qty }])
     }
 
     const removeItem = (id) => {
@@ -42,8 +42,7 @@ export const CartProvider = ({ children }) => {
     }
 
     const [id2, setId] = useState();
-    console.log(id2)
-
+ 
     const [form, setForm] = useState({
         name: '',
         telefono: '',
